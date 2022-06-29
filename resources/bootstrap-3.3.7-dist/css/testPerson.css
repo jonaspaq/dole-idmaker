@@ -1,0 +1,16 @@
+.header-li-h1{
+	display: block;
+	float:left;
+	margin:7px 50px 0 20px;
+	color: white;
+}
+.header-li{
+	display: block; 
+	float:left;
+	color:white;
+	margin:0 0 0 0px;
+}
+.nav-links{
+	color:white;
+}
+

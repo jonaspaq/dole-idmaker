@@ -1,0 +1,20 @@
+.textInput{
+	color:#000000;
+	margin-bottom:10px;
+	padding:5px;
+	border-radius:5px;
+	width:350px;
+}
+
+.fileInput{
+	margin-left:95px;
+	margin-bottom:10px;
+}
+.fileInputEdit{
+	margin-left:70px;
+	margin-bottom:10px;
+	margin-top:20px;
+}
+
+#innercover{
+}
