@@ -29,18 +29,21 @@
 
 </head>
 <?php
-    $conn = new mysqli('localhost', 'root', '', 'idtest');
+    require_once('../controllers/MyConnect.php');
+    $conn = myConnect();
 
       if(isset($_GET['printid'])){
       	$id = $_GET['printid'];
 
         $sql = " SELECT * FROM person WHERE personID = $id";
 
-        $result = mysqli_query($conn,$sql);
+        $result = mysqli_query($conn, $sql);
 
         $row = mysqli_fetch_array($result);
 
       	$image = "../uploads/".$row['file'];
+
+		$generatedId = $row['generatedID'];
 
       	$fnA = $row['firstName'];
 		$fnA1 = $fnA[0];
@@ -101,7 +104,7 @@
 		</div>
 
 		<div style="border: 0px solid; width:60%; height:7%; float:left; z-index:5; margin-top:-63px; margin-left:30px; z-index:99; position:relative; ">			
-			<strong><p style="width:100%; height:100%; background-color:white; color:black; font-size:28px; margin:0; padding:0;  border-radius:3px;"> <?php echo $fnA1;if($row['middleName']!=NULL){echo $mnA1;} echo $lnA1;echo "-".date("ymd")."" ;?></p></strong>
+			<strong><p style="width:100%; height:100%; background-color:white; color:black; font-size:28px; margin:0; padding:0;  border-radius:3px;"> <?php echo $generatedId;?></p></strong>
 		</div>
 
 		<div style="width:78%; height:15%; float:left; z-index:5; margin-top:-24px; margin-left:4px; z-index:99; position:relative; background-color:#334DA9;border-radius:4px;">			

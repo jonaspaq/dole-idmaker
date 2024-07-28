@@ -5,7 +5,8 @@
     <?php include('header.php');?>
     <title>Print I.D</title>
     <?php
-    $conn = new mysqli('localhost', 'root', '', 'idtest');
+    require_once('../controllers/MyConnect.php');
+    $conn = myConnect();
 
       if(isset($_GET['printid'])){
       $id = $_GET['printid'];

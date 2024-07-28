@@ -34,8 +34,10 @@ function addID(){
 	$file_loc = $_FILES['file']['tmp_name'];
 	$folder="../uploads/";	 
 	move_uploaded_file($file_loc,$folder.$file);
+	
+	$generatedID = strtoupper($firstName[0].($middleName[0] ?? $middleName[0]) . $lastName[0])."-".date("ymd");
 
-	$sql = "INSERT INTO person(personID,firstName,middleName,lastName,nameSuffix,school,address,contact,designation,emFirstName,emMidName,emLastName,emAddress,emContact,file) VALUES('$id','$firstName','$middleName','$lastName','$nameSuffix','$school','$address','$contact','$designation','$emFirstName','$emMidName','$emLastName','$emAdd','$emContact','$file')";
+	$sql = "INSERT INTO person(generatedID,firstName,middleName,lastName,nameSuffix,school,address,contact,designation,emFirstName,emMidName,emLastName,emAddress,emContact,file) VALUES('$generatedID','$firstName','$middleName','$lastName','$nameSuffix','$school','$address','$contact','$designation','$emFirstName','$emMidName','$emLastName','$emAdd','$emContact','$file')";
 	$result = mysqli_query($conn,$sql);
 
 	if($result){
